@@ -18,8 +18,8 @@ public class MovimientoPrincipal : MonoBehaviour
 
     private void Update()
     {
-        inputMov.x = Input.GetAxis("Horizontal")*velocidad;
-        inputMov.y = Input.GetAxis("Vertical")*velocidad;
+        inputMov.x = Input.GetAxis("Horizontal");
+        inputMov.y = Input.GetAxis("Vertical");
 
         inputRot.x = Input.GetAxis("Mouse X") * sensibilidad;
         inputRot.y = Input.GetAxis("Mouse Y") * sensibilidad;
