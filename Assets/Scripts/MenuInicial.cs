@@ -12,6 +12,11 @@ public class MenuInicial : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void Regresar()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 
     public void Salir()
     {
