@@ -3020,7 +3020,7 @@ PrefabInstance:
     - target: {fileID: 5414167549562472899, guid: 650e1cef4c98f0d4bab3fce14d4ee51d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.79
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5414167549562472899, guid: 650e1cef4c98f0d4bab3fce14d4ee51d,
         type: 3}
@@ -7650,7 +7650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e7fe909c5691443b7b7c6ac1472da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 10
+  velocidad: 20
   sensibilidad: 10
 --- !u!65 &1467545811
 BoxCollider:
