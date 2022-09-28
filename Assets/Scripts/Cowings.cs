@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Cowings : MonoBehaviour
 {
-    public Reloj tiempo;
+    Reloj reloj;
     public CuentaMonedas cuentamonedas;
-    public bool tocar = false;
 
     // Start is called before the first frame update
     void Start()
     {
         cuentamonedas = GameObject.FindGameObjectWithTag("Player").GetComponent<CuentaMonedas>();
-        tiempo = GameObject.FindGameObjectWithTag("Tiempo").GetComponent<Reloj>();
+        reloj = GameObject.FindGameObjectWithTag("Tiempo").GetComponent<Reloj>();
 
     }
 
@@ -22,7 +21,7 @@ public class Cowings : MonoBehaviour
         {
             cuentamonedas.Cantidad++;
             cuentamonedas.Puntuacion.text = cuentamonedas.Cantidad.ToString("00");
-            tiempo.TiempoMostradoEnSegundos += 15f;
+            reloj.TiempoMostradoEnSegundos += 15f;
             Destroy(gameObject);
         }
     }

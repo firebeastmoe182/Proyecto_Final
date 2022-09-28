@@ -7,6 +7,7 @@ public class CuentaMonedas : MonoBehaviour
 {
 
     public MovimientoPrincipal mov;
+    public Reloj tiempo;
     public int Cantidad;
     [Tooltip("Cantidad de monedas en total")]
     public int MonedasTotales;
@@ -22,6 +23,7 @@ public class CuentaMonedas : MonoBehaviour
         Cantidad = 0;
         Puntuacion.text = Cantidad.ToString("00");
         mov = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPrincipal>();
+        tiempo = GameObject.FindGameObjectWithTag("Player").GetComponent<Reloj>();
     }
 
     // Update is called once per frame

@@ -17,10 +17,10 @@ public class Reloj : MonoBehaviour
     public MovimientoPrincipal mov;
     public CuentaMonedas monedas;
 
-    private float TiempoFrameConTiempoScale = 0f;
+    public float TiempoFrameConTiempoScale = 0f;
     public float TiempoMostradoEnSegundos = 0f;
-    private float escalaDelTiempoPausar, escalaDeTiempoInicial;
-    private bool EstaPausado = false;
+    private float escalaDeTiempoInicial;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,6 @@ public class Reloj : MonoBehaviour
         escalaDeTiempoInicial = escalaDeTiempo;
         myText = GetComponent<Text>();
         TiempoMostradoEnSegundos = tiempoinicial;
-        //ActualizarReloj(tiempoinicial);
         mov = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPrincipal>();
         monedas = GameObject.FindGameObjectWithTag("Player").GetComponent<CuentaMonedas>();
 
@@ -38,13 +37,13 @@ public class Reloj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!EstaPausado)
-        {
-            TiempoFrameConTiempoScale = Time.deltaTime * escalaDeTiempo;
-            TiempoMostradoEnSegundos += TiempoFrameConTiempoScale;
-            ActualizarReloj(TiempoMostradoEnSegundos);
-        }
 
+        TiempoFrameConTiempoScale = Time.deltaTime * escalaDeTiempo;
+        TiempoMostradoEnSegundos += TiempoFrameConTiempoScale;
+        ActualizarReloj(TiempoMostradoEnSegundos);
+       
+
+        
     }
 
     public void ActualizarReloj(float TiempoEnSegundos)
