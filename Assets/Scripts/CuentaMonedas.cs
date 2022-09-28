@@ -9,7 +9,7 @@ public class CuentaMonedas : MonoBehaviour
     public MovimientoPrincipal mov;
     public int Cantidad;
     [Tooltip("Cantidad de monedas en total")]
-    public int Coings;
+    public int MonedasTotales;
     public Text Puntuacion;
     public Text Ganaste;
     public Text Perdiste;
@@ -27,8 +27,9 @@ public class CuentaMonedas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Cantidad == Coings )
+       if (Cantidad == MonedasTotales )
         {
+            mov.sensibilidad = 0;
             mov.velocidad = 0;
             ganaste = "GANASTE";
             Ganaste.text = ganaste;

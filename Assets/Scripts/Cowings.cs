@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cowings : MonoBehaviour
 {
-    public Tiempo tiempo;
+    public Reloj tiempo;
     public CuentaMonedas cuentamonedas;
     public bool tocar = false;
 
@@ -12,7 +12,7 @@ public class Cowings : MonoBehaviour
     void Start()
     {
         cuentamonedas = GameObject.FindGameObjectWithTag("Player").GetComponent<CuentaMonedas>();
-        tiempo = GameObject.FindGameObjectWithTag("Tiempo").GetComponent<Tiempo>();
+        tiempo = GameObject.FindGameObjectWithTag("Tiempo").GetComponent<Reloj>();
 
     }
 
