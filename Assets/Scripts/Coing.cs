@@ -5,12 +5,12 @@ using UnityEngine;
 public class Coing : MonoBehaviour
 {
     public CuentaMonedas cuentamonedas;
-    private AudioSource audioSource;
+    public AudioClip Sonido;
+    
     //Start is called before the first frame update
     void Start()
     {
         cuentamonedas = GameObject.FindGameObjectWithTag("Player").GetComponent<CuentaMonedas>();
-        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -20,8 +20,8 @@ public class Coing : MonoBehaviour
         {
             cuentamonedas.Cantidad++;
             cuentamonedas.Puntuacion.text = cuentamonedas.Cantidad.ToString("00");
-            audioSource.Play();
-            Destroy(gameObject,1f);
+            AudioSource.PlayClipAtPoint(Sonido,Camera.main.transform.position);
+            Destroy(gameObject);
         }
     }
 
