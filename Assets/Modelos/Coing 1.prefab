@@ -88,10 +88,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4870805099513186861}
-  - component: {fileID: 4870805099513186860}
   - component: {fileID: 4870805099513186863}
-  - component: {fileID: 4870805099513186862}
+  - component: {fileID: 4870805099513186860}
   - component: {fileID: 4870805099513186849}
+  - component: {fileID: 5503364711256747737}
   m_Layer: 0
   m_Name: Coing 1
   m_TagString: Untagged
@@ -107,13 +107,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4870805099513186851}
   m_LocalRotation: {x: -0, y: -0.038048975, z: -0, w: 0.9992759}
-  m_LocalPosition: {x: -17.6, y: 17.7, z: -47.6}
+  m_LocalPosition: {x: -53.2, y: 17.7, z: -132}
   m_LocalScale: {x: 26.60674, y: 26.60674, z: 26.60674}
   m_Children:
   - {fileID: 4870805098345695572}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -4.361, z: 0}
+--- !u!65 &4870805099513186863
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870805099513186851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8854778, y: 1, z: 0.44867805}
+  m_Center: {x: 0.034791835, y: 0, z: 0.14383017}
 --- !u!54 &4870805099513186860
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,20 +143,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4870805099513186863
-BoxCollider:
+--- !u!75 &4870805099513186849
+ConstantForce:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4870805099513186851}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.852712, y: 1, z: 0.44867805}
-  m_Center: {x: 0.08084557, y: 0, z: 0.14383017}
---- !u!114 &4870805099513186862
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0.5, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
+--- !u!114 &5503364711256747737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,15 +169,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuentamonedas: {fileID: 0}
   Sonido: {fileID: 8300000, guid: e3fc8850c5af77f42af9ff67ad1ff8f1, type: 3}
---- !u!75 &4870805099513186849
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4870805099513186851}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0.5, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}

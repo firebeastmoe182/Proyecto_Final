@@ -9,11 +9,18 @@ public class MovimientoPrincipal : MonoBehaviour
     Vector2 inputRot;
     public float velocidad;
     public float sensibilidad;
+    public GameObject[] Camaras;
+    public GameObject Marcador;
+    Reloj reloj;
 
 
     private void Start()
     {
+        reloj = GameObject.FindGameObjectWithTag("Tiempo").GetComponent<Reloj>();
         rb = GetComponent<Rigidbody>();
+        Camaras[0].gameObject.SetActive(true);
+        Camaras[1].gameObject.SetActive(false);
+        Marcador.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -23,6 +30,26 @@ public class MovimientoPrincipal : MonoBehaviour
 
         inputRot.x = Input.GetAxis("Mouse X") * sensibilidad;
         inputRot.y = Input.GetAxis("Mouse Y") * sensibilidad;
+
+        if(Input.GetKey(KeyCode.Alpha1))
+        {
+            Camaras[0].gameObject.SetActive(true);
+            Camaras[1].gameObject.SetActive(false);
+            Marcador.gameObject.SetActive(true);
+            reloj.escalaDeTiempo = -1;
+            velocidad = 40;
+            sensibilidad = 10;
+
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            Camaras[0].gameObject.SetActive(false);
+            Camaras[1].gameObject.SetActive(true);
+            Marcador.gameObject.SetActive(false);
+            reloj.escalaDeTiempo = 0;
+            velocidad = 0;
+            sensibilidad = 0;
+        }
 
     }
 
