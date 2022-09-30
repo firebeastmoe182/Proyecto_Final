@@ -10,6 +10,8 @@ public class MovimientoPrincipal : MonoBehaviour
     public float velocidad;
     public float sensibilidad;
     public GameObject[] Camaras;
+    public GameObject pausa;
+    private bool menupausa;
     public GameObject Marcador;
     Reloj reloj;
 
@@ -21,6 +23,7 @@ public class MovimientoPrincipal : MonoBehaviour
         Camaras[0].gameObject.SetActive(true);
         Camaras[1].gameObject.SetActive(false);
         Marcador.gameObject.SetActive(true);
+        pausa.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -49,6 +52,21 @@ public class MovimientoPrincipal : MonoBehaviour
             reloj.escalaDeTiempo = 0;
             velocidad = 0;
             sensibilidad = 0;
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            menupausa = !menupausa;
+        }
+        if (menupausa == true)
+        {
+            pausa.gameObject.SetActive(true);
+            reloj.escalaDeTiempo = 0;
+            velocidad = 0;
+            sensibilidad = 0;
+        }
+        else
+        {
+            pausa.gameObject.SetActive(false);
         }
 
     }
