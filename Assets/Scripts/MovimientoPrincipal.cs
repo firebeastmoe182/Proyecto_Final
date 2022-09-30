@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovimientoPrincipal : MonoBehaviour
 {
@@ -70,6 +71,7 @@ public class MovimientoPrincipal : MonoBehaviour
         }
 
     }
+ 
 
     private void FixedUpdate()
     {
@@ -77,4 +79,5 @@ public class MovimientoPrincipal : MonoBehaviour
         rb.velocity = transform.forward * vel * inputMov.y + transform.right * vel * inputMov.x;
         transform.rotation *= Quaternion.Euler(0, inputRot.x, 0);
     }
+
 }

@@ -22,4 +22,6 @@ public class MenuInicial : MonoBehaviour
     {
         Application.Quit();
     }
+
+  
 }

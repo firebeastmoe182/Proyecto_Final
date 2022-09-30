@@ -15,6 +15,7 @@ public class CuentaMonedas : MonoBehaviour
     public Text Ganaste;
     public Text Perdiste;
     public string ganaste;
+    public GameObject MenuGanaste;
 
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class CuentaMonedas : MonoBehaviour
         Puntuacion.text = Cantidad.ToString("00");
         mov = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPrincipal>();
         tiempo = GameObject.FindGameObjectWithTag("Player").GetComponent<Reloj>();
+        MenuGanaste.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class CuentaMonedas : MonoBehaviour
             mov.sensibilidad = 0;
             mov.velocidad = 0;
             ganaste = "GANASTE";
-            Ganaste.text = ganaste;
+            MenuGanaste.gameObject.SetActive(true);
         }
     }
 }

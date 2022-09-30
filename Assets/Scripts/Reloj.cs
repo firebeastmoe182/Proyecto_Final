@@ -20,6 +20,7 @@ public class Reloj : MonoBehaviour
     public float TiempoFrameConTiempoScale = 0f;
     public float TiempoMostradoEnSegundos = 0f;
     private float escalaDeTiempoInicial;
+    public GameObject MenuPerdiste;
     
 
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class Reloj : MonoBehaviour
         TiempoMostradoEnSegundos = tiempoinicial;
         mov = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPrincipal>();
         monedas = GameObject.FindGameObjectWithTag("Player").GetComponent<CuentaMonedas>();
+        MenuPerdiste.gameObject.SetActive(false);
 
 
     }
@@ -65,7 +67,8 @@ public class Reloj : MonoBehaviour
         {
             mov.sensibilidad = 0;
             mov.velocidad = 0;
-            Perdiste.text = "PERDISTE";
+            MenuPerdiste.gameObject.SetActive(true);
+
         }
 
         if (monedas.ganaste == "GANASTE")
