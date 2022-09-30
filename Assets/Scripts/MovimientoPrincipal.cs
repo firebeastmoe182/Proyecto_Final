@@ -57,18 +57,22 @@ public class MovimientoPrincipal : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             menupausa = !menupausa;
+            if (menupausa == true)
+            {
+                pausa.gameObject.SetActive(true);
+                reloj.escalaDeTiempo = 0;
+                velocidad = 0;
+                sensibilidad = 0;
+            }
+            else
+            {
+                pausa.gameObject.SetActive(false);
+                reloj.escalaDeTiempo = -1;
+                velocidad = 40;
+                sensibilidad = 10;
+            }
         }
-        if (menupausa == true)
-        {
-            pausa.gameObject.SetActive(true);
-            reloj.escalaDeTiempo = 0;
-            velocidad = 0;
-            sensibilidad = 0;
-        }
-        else
-        {
-            pausa.gameObject.SetActive(false);
-        }
+       
 
     }
  
